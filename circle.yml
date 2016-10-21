@@ -1,0 +1,23 @@
+machine:
+  node:
+    version: 5.0.0
+  post:
+    - npm install -g npm@3.x.x
+
+
+dependencies:
+  override:
+    - npm install
+    - sudo pip install awscli
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run build
+      - npm run deploy
+  staging:
+    branch: development
+    commands:
+      - npm run build-staging
+      - npm run deploy-staging
