@@ -28,11 +28,7 @@ you can then add / remove dependencies. The .npmrc file automatically appends --
 Saving all dependencies to dev-dependencies is fine since webpack will build what you need anyway.
 
 ### webpack.config.babel.js
-In the webpack config, you need to set the output public path to the path of your project on s3, otherwise, links to assets will be broken.
-If your project is hosted on https://assets-secure.applicaster.com/path/to/my/project/on/s3, you need to change the config as follows :
-```javascript
-const publicPath = process.env.NODE_ENV === "development" ? "/" : "/path/to/my/project/on/s3/";
-```
+In the webpack config, you need to set the output public path to the path of your project.
 
 ### reset git and set remote
 You probably don't want to commit your change on this repo, and set up your own repo.
